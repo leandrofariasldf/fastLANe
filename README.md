@@ -7,6 +7,10 @@
 >  UI Inspired by https://github.com/dlcNine/rpg-css
 ---
 
+
+https://github.com/user-attachments/assets/681803b0-3c53-432b-a767-b6188c2c9aea
+
+
 ## What it does
 fastLANe runs **on-demand** (not a service). You launch it, it spins up a local backend and UI, you troubleshoot fast, export a report, close it.
 
