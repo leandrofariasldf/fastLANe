@@ -1,0 +1,6 @@
+fastapi>=0.110
+uvicorn>=0.23
+aiofiles>=23.2.1
+pywebview>=4.4
+pyinstaller>=6.5
+scapy>=2.5.0

@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# PyInstaller
+build/
+dist/
+*.spec.bak
+
+# Inno Setup outputs
+*.exe
+installer/*.exe
+
+# Local/OS
+.DS_Store
+Thumbs.db
+
+# Your local stash
+.old/
+rpg-css/

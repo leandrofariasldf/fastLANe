@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fastLANe</title>
+  <link rel="stylesheet" href="/web/assets/rpg-min.css" />
+  <link rel="stylesheet" href="/web/assets/styles.css" />
+</head>
+<body>
+  <div class="rpg-shell">
+    <header class="rpg-top rpg-box">
+      <div class="rpg-brand">
+        <div class="rpg-title">fastLANe</div>
+        <div class="rpg-subtitle">Network Diagnostics Made Simple</div>
+      </div>
+      <div class="rpg-actions">
+        <button class="rpg-button" data-export="txt">Export TXT</button>
+        <button class="rpg-button" data-export="md">Export MD</button>
+      </div>
+    </header>
+
+    <nav class="rpg-tabs rpg-box">
+      <button class="tab rpg-button active">
+        <span class="tab-label rpg-nav-item is-active">
+          <span class="rpg-nav-a" data-tab="overview">Overview</span>
+        </span>
+      </button>
+      <button class="tab rpg-button">
+        <span class="tab-label rpg-nav-item">
+          <span class="rpg-nav-a" data-tab="local">Local Info</span>
+        </span>
+      </button>
+      <button class="tab rpg-button">
+        <span class="tab-label rpg-nav-item">
+          <span class="rpg-nav-a" data-tab="link">Link Discovery</span>
+        </span>
+      </button>
+    </nav>
+
+    <main class="rpg-main">
+      <section class="panel active" id="panel-overview">
+        <div class="rpg-grid">
+          <div class="rpg-box" id="status-card">
+            <div class="rpg-label">Overall Status</div>
+            <div class="rpg-value" id="overall-status">CHECKING</div>
+          </div>
+          <div class="rpg-box">
+            <div class="rpg-label">Active Interface</div>
+            <div class="rpg-value" id="overview-interface">--</div>
+          </div>
+          <div class="rpg-box">
+            <div class="rpg-label">IP Address</div>
+            <div class="rpg-value" id="overview-ip">--</div>
+          </div>
+          <div class="rpg-box">
+            <div class="rpg-label">Gateway</div>
+            <div class="rpg-value" id="overview-gateway">--</div>
+          </div>
+        </div>
+
+        <div class="rpg-columns">
+          <div class="rpg-box">
+            <div class="rpg-label">Key Findings</div>
+            <ul class="rpg-list" id="findings-list">
+              <li>Loading...</li>
+            </ul>
+          </div>
+          <div class="rpg-box">
+            <div class="rpg-label">Quick Tests</div>
+            <div class="rpg-tests">
+              <input class="rpg-textbox" id="test-target" type="text" placeholder="Target: 8.8.8.8 or hostname" />
+              <div class="rpg-button-row">
+                <button class="rpg-button" data-test="ping">Ping</button>
+                <button class="rpg-button" data-test="dns">DNS</button>
+                <button class="rpg-button" data-test="tnc">TNC</button>
+                <button class="rpg-button" data-test="tracert">Tracert</button>
+              </div>
+            </div>
+            <div class="rpg-progress hidden" id="diag-progress">
+              <div class="rpg-progress-bar" id="diag-progress-bar"></div>
+            </div>
+            <div class="rpg-log" id="test-output">Ready for on-demand tests.</div>
+            <div class="rpg-progress hidden" id="export-progress">
+              <div class="rpg-progress-bar" id="export-progress-bar"></div>
+            </div>
+            <div class="export-actions">
+              <button class="rpg-button" id="open-export" disabled>Open Export</button>
+              <button class="rpg-button" id="open-export-folder" disabled>Open Folder</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-local">
+        <div class="rpg-box">
+          <div class="rpg-label">Local Interface Details</div>
+          <div class="info-grid" id="local-info-grid"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-link">
+        <div class="rpg-box rpg-link-box">
+          <div class="rpg-label">Link Discovery</div>
+          <div class="rpg-link-body">
+            <div class="rpg-link-status" id="link-status">CHECKING</div>
+            <div class="rpg-link-reason" id="link-reason">Npcap not installed.</div>
+            <div class="rpg-link-npcap" id="link-npcap">Npcap: Checking</div>
+            <div class="rpg-progress hidden" id="link-progress">
+              <div class="rpg-progress-bar" id="link-progress-bar"></div>
+            </div>
+            <ul class="rpg-list" id="link-tips"></ul>
+            <div class="link-actions">
+              <a class="rpg-button" id="npcap-link" href="#" target="_blank" rel="noopener">Download Npcap</a>
+              <button class="rpg-button" id="restart-app">Restart App</button>
+            </div>
+            <div class="link-instructions" id="link-instructions"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/web/assets/app.js"></script>
+</body>
+</html>
