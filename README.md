@@ -3,7 +3,8 @@
 
 > 🧪 **UI vibe:** PlayStation-era **Final Fantasy menu** (90s JRPG).  
 > Pixel-ish typography, clean HUD panels, and that “Save/Load screen energy” — but for networks. 🎛️💾
-
+> 
+> UI Inspired by https://github.com/dlcNine/rpg-css
 ---
 
 ## What it does
